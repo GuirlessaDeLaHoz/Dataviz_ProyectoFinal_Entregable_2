@@ -429,10 +429,10 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado"><strong>2.2. Análisis Bivariado:</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>2.2.1. Variables Numéricas:</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>2.3.2. Variables Categóricas</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-multivariado"><strong>2.3. Análisis multivariado</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>2.2.2. Variables Categóricas</strong></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-multivariado"><strong>2.3. Análisis multivariado</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evidencia-analitica"><strong>3. Evidencia Análitica:</strong></a><ul class="nav section-nav flex-column">
@@ -4357,7 +4357,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <p>Como análisis general, en la matriz de dispersión no se aprecian relaciones lineales claras o fuertes entre la mayoría de las variables numéricas, lo que coincide con lo observado en la matriz de correlación, donde no se identificaron valores de 𝑟^2 elevados. En su lugar, predominan correlaciones débiles o negativas, lo que sugiere que estas variables, de forma individual, podrían tener una capacidad limitada para explicar la variabilidad de otras dentro del conjunto de datos.</p>
 </section>
 <section id="id3">
-<h4><strong>2.3.2. Variables Categóricas</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<h4><strong>2.2.2. Variables Categóricas</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variables categóricas (excepto &#39;readmitted&#39;)</span>
@@ -4392,8 +4392,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <p>De forma general, en estas gráficas se observa que, para la mayoría de las variables categóricas, una gran proporción de los pacientes corresponde a aquellos que no han sido readmitidos en el hospital. Este patrón se repite de manera consistente, independientemente de la variable analizada, lo que sugiere que la clase de no readmisión es predominante en el conjunto de datos. Si bien algunas variables como race, gender o age muestran una distribución más equilibrada entre sus categorías internas, la tendencia general sigue favoreciendo a los pacientes sin readmisión.</p>
 <p>En conjunto, no se identifican patrones categóricos evidentes que permitan diferenciar de forma clara a los pacientes según su estado de readmisión únicamente a partir de estas variables. Sin embargo, se detecta que ciertas variables con un mayor número de categorías —como medical_specialty o payer_code— podrían contener información útil si se agrupan o transforman para reducir la dispersión y aumentar su representatividad. Asimismo, variables relacionadas con tratamientos o medicación, aunque concentradas en pocas categorías, podrían aportar valor predictivo al combinarse con otras variables en un modelo multivariado, ya que podrían reflejar prácticas clínicas o perfiles de pacientes asociados con un mayor riesgo de readmisión.</p>
 </section>
+</section>
 <section id="analisis-multivariado">
-<h4><strong>2.3. Análisis multivariado</strong><a class="headerlink" href="#analisis-multivariado" title="Link to this heading">#</a></h4>
+<h3><strong>2.3. Análisis multivariado</strong><a class="headerlink" href="#analisis-multivariado" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Librerías necesarias</span>
@@ -4509,7 +4510,6 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <p>El gráfico presenta los valores del Factor de Inflación de la Varianza (VIF) para las variables numéricas del conjunto de datos, con el objetivo de evaluar la presencia de colinealidad entre ellas. En general, se observa que la mayoría de las variables presentan valores por debajo del umbral de 5, lo que indica que no existe una colinealidad problemática. Sin embargo, las variables <em>number_diagnoses</em>, <em>num_medications</em> y <em>num_lab_procedures</em> muestran los valores más altos de VIF, siendo la primera la más elevada, superando el umbral establecido. Esto sugiere que estas variables están fuertemente relacionadas entre sí o con alguna otra variable del modelo, lo cual podría generar redundancia en el análisis. En contraste, variables como <em>patient_nbr</em> y <em>encounter_id</em> presentan valores muy bajos, lo que significa que son prácticamente independientes de las demás. En conclusión, aunque la mayoría de las variables numéricas no presentan problemas de colinealidad, se recomienda revisar las que superan el valor de referencia, ya que podrían afectar la estabilidad de los modelos estadísticos o predictivos.</p>
-</section>
 </section>
 </section>
 <section id="evidencia-analitica">
@@ -12615,10 +12615,10 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado"><strong>2.2. Análisis Bivariado:</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>2.2.1. Variables Numéricas:</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>2.3.2. Variables Categóricas</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-multivariado"><strong>2.3. Análisis multivariado</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>2.2.2. Variables Categóricas</strong></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-multivariado"><strong>2.3. Análisis multivariado</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evidencia-analitica"><strong>3. Evidencia Análitica:</strong></a><ul class="nav section-nav flex-column">
